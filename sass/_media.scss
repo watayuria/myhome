@@ -1,0 +1,8 @@
+@use './config' as *;
+
+// メディアクエリ
+@mixin media($breakpoint) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}

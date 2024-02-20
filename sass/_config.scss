@@ -1,0 +1,31 @@
+/* フォント設定 */
+$font-noto: 'Noto Sans Myanmar', sans-serif;
+
+// 色関係の設定 ---------------------------
+$color-font-black: #121212;
+$color-font-white: #fff;
+$color-font-black-2: #232323;
+$color-font-green: #87BE43;
+$color-font-blue: #12376A;
+$color-font-orange: #D74538;
+$color-font-orange-2: #F67E11;
+$color-font-purple: #937ECC;
+$color-font-brown: #513F3D;
+$color-bg-black: #121212;
+$color-bg-gray: #F2F5F8;
+$color-bg-blue: #12376A;
+$color-border-blue: #12376A;
+
+
+// セクション毎の上下余白 -----------------
+$sec-TopandBottom-padding-mb: 50px;
+$sec-TopandBottom-padding-pc: 150px;
+
+// ブレイクポイント -------------------------
+$breakpoints: (
+	ss: "screen and (min-width: 350px)",
+	sm: "screen and (min-width: 431px)",
+	md: "screen and (min-width: 590px)",
+	lg: "screen and (min-width: 992px)",
+	xl: "screen and (min-width: 1920px)",
+);

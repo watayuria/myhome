@@ -1,0 +1,183 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script>
+
+
+$(function () {
+  $(window).on('load scroll', function () {
+    var $header = $('.header');
+
+    // 200以上スクロールしたら処理
+    if ($(window).scrollTop() > 200) {
+      $header.addClass('sticky');
+    } else {
+      $header.removeClass('sticky');
+    }
+  });
+});
+
+
+$(function(){
+  $('.slider1').slick({
+    autoplay: true, //自動でスクロール
+    autoplaySpeed: 0, //自動再生のスライド切り替えまでの時間を設定
+    speed: 5000, //スライドが流れる速度を設定
+    cssEase: "linear", //スライドの流れ方を等速に設定
+    slidesToShow: 7.3, //表示するスライドの数
+    swipe: false, // 操作による切り替えはさせない
+    arrows: false, //矢印非表示
+    pauseOnFocus: false, //スライダーをフォーカスした時にスライドを停止させるか
+    pauseOnHover: false, //スライダーにマウスホバーした時にスライドを停止させるか
+    responsive: [
+      {
+        breakpoint: 541,
+        settings: {
+          slidesToShow: 2.9,
+        }
+      },{
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 2.3,
+        }
+      },{
+        breakpoint: 376,
+        settings: {
+          slidesToShow: 2,
+        }
+      }
+    ]
+  });
+
+  $('.slider2').slick({
+     speed: 800,  　 //スライドするスピード
+     arrows: true,          //左右の矢印
+     infinite: true,　　　　//スライドのループ
+     pauseOnHover: false,   //ホバーしたときにスライドを一時停止しない　
+ });
+  $('.slider2_sp').slick({
+     speed: 800,  　 //スライドするスピード
+     arrows: true,          //左右の矢印
+     infinite: true,　　　　//スライドのループ
+     pauseOnHover: false,   //ホバーしたときにスライドを一時停止しない　
+ });
+  $('.point-flex_sp').slick({
+    slidesToShow: 1.4, //表示するスライドの数
+    arrows: false, //矢印非表示
+    dots: true,
+    centerMode: true,
+    centerPadding: '3%',
+    dotsClass: 'point-flex_sp_dots',
+    responsive: [
+      {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '9%',
+        }
+      },{
+        breakpoint: 376,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '4%',
+        }
+      }
+    ]
+  });
+  $('.step_ct_sp').slick({
+    slidesToShow: 1.8, //表示するスライドの数
+    arrows: false, //矢印非表示
+    dots: true,
+    dotsClass: 'slick-dots2',
+    centerMode: true,
+    centerPadding: '0%',
+    dotsClass: 'step_ct_sp_dots',
+    responsive: [
+      {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1.4,
+          enterPadding: '0%',
+        }
+      },{
+        breakpoint: 376,
+        settings: {
+          slidesToShow: 1.2,
+          centerPadding: '0%',
+        }
+      }
+    ]
+  });
+  $('.staff_ct_sp').slick({
+    slidesToShow: 2.1, //表示するスライドの数
+    arrows: false, //矢印非表示
+    dots: true,
+    dotsClass: 'slick-dots2',
+    centerMode: true,
+    centerPadding: '5%',
+    dotsClass: 'staff_ct_sp_dots',
+    responsive: [
+      {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1.8,
+          centerPadding: '2%',
+        }
+      },{
+        breakpoint: 376,
+        settings: {
+          slidesToShow: 1.8,
+          centerPadding: '0%',
+        }
+      }
+    ]
+  });
+});
+
+
+
+$('.qs_ct').click(function() {
+    console.log('クリックされました！');
+    $(this).next().slideToggle();
+    console.log($(this).find(".arrow_circle").attr("style"));
+    if($(this).find(".arrow_circle").attr("style") == "transform: rotate(180deg);" ){
+        $(this).find('.arrow_circle').css('transform','rotate(0deg)');
+    }else{
+        $(this).find('.arrow_circle').css('transform','rotate(180deg)');
+
+    }
+});
+
+$('.qs_ct_sp').click(function() {
+    console.log('クリックされました！');
+    $(this).next().slideToggle();
+    console.log($(this).find(".arrow_circle").attr("style"));
+    if($(this).find(".arrow_circle").attr("style") == "transform: rotate(180deg);" ){
+        $(this).find('.arrow_circle').css('transform','rotate(0deg)');
+    }else{
+        $(this).find('.arrow_circle').css('transform','rotate(180deg)');
+
+    }
+});
+
+$(function() {
+  $('.more-btn').on('click', function() {
+    if( $(this).children().is('.open') ) {
+      $(this).html('<p class="close">閉じる</p>').addClass('close-btn');
+      $(this).parent().removeClass('slide-up').addClass('slide-down');
+    } else {
+      $(this).html('<p class="open">>>もっと見る</p>').removeClass('close-btn');
+      $(this).parent().removeClass('slide-down').addClass('slide-up');
+    }
+  });
+});
+
+$(window).scroll(function() {
+    var scroll_len = $(window).scrollTop();
+    if ( scroll_len > 0 ) {
+      $('.fadein').animate({height: 'show'}, 'slow' );
+    } else {
+      $('.fadein').animate({height: 'hide'}, 'slow' );
+    }
+  });
+
+  </script>

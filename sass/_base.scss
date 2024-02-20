@@ -1,0 +1,235 @@
+@use "config" as *;
+@use "media" as *;
+@use "functions" as *;
+
+/* ------------------------------------------------
+共通
+------------------------------------------------ */
+
+/* Sass変数 */
+$Responsive_MB  : 992px;  //スマホサイズ
+
+/* -- 共通スタイル -- */
+.pc{
+  display: none;
+
+  @include media(lg){
+    display: block;
+  }
+}
+
+
+.mb{
+  display: block;
+
+  @media screen and (min-width:$Responsive_MB) {
+    display: none;
+  }
+}
+
+/* カラー */
+.font_black{
+  color: $color-font-black;
+}
+.font_green{
+  color: $color-font-green;
+}
+.font_blue{
+  color: $color-font-blue;
+}
+.font_orange{
+  color: $color-font-orange;
+}
+.font_orange_2{
+  color: $color-font-orange-2;
+}
+.font_purple{
+  color: $color-font-purple;
+}
+
+/* アニメーション */
+@keyframes scroll{
+  0%{
+    transform: translateX(0);
+  }
+
+  100%{
+    transform: translateX(calc(-250px * 2));
+  }
+}
+
+@keyframes animation {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+      transform: scale(1);
+  }
+  40% {
+      transform: scale(1.05);
+  }
+  50% {
+      transform: scale(1);
+  }
+  60% {
+      transform: scale(1.05);
+  }
+  70% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.animation {
+  animation-timing-function: ease-in-out;
+  animation: animation 2s linear infinite;
+  animation-duration: 2.0s;
+  animation-direction: alternate;
+}
+
+/* タイトル */
+.Sec_Ttl{
+  width: 73.33%;
+  // height: 95px;
+  text-align: center;
+  // margin: 24.72px auto 24.21px;
+  margin: 0 auto 24.21px;
+  padding-top: 24.72px;
+  h2{
+    font-size: 20px;
+    line-height: 29px;
+
+    span{
+      font-size: 25px;
+      color: $color-font-blue;
+    }
+  }
+  @include media(sm) {
+    
+  }
+  @include media(lg) {
+    width: 640px;
+    margin: 0 auto 24px;
+    h2{
+      font-size: 28px;
+      line-height: 50px;
+
+      span{
+        font-size: 40px;
+      }
+    }
+    }
+
+  .sub_ttl{
+    display: inline-block;
+    font-size: 9px;
+    border-radius: 10px;
+    background-color: $color-font-green;
+    color: #fff;
+    line-height: 12px;
+    padding: 3px 7px;
+    margin-top: 15px;
+  }
+}
+
+body {
+	color: $color-font-black;
+	font-family: $font-noto;
+	line-height: 17px;
+  font-size: rem(12);
+	&.is-fixed {
+		overflow: hidden;
+	}
+
+  #continer{
+    @media screen and (min-width: 590px)  {
+      width: 590px;
+      margin: 0 auto;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    }
+    @media screen and (min-width: 992px)  {
+      width: 100vw;
+    }
+  }
+}
+
+
+    /* triangle_separator_gr */
+    .triangle_separator_gr{
+      // width: 100px;
+      display: flex;
+      margin-top: -50px;
+      @include media(sm){
+        width: 100%;
+      }
+      .triangle_separator_gr_L{
+        border-right: 50vw solid transparent;
+        border-bottom: 40px solid #F2F5F8; 
+        height: 0;
+        width: 0;
+        @include media(md){
+          border-right: 295px solid transparent;
+          border-bottom: 70px solid #F2F5F8; 
+        }
+        @include media(lg) {
+          border-right: 50vw solid transparent;
+          border-bottom: 150px solid #F2F5F8; 
+        }
+      }
+      .triangle_separator_gr_R{
+        border-left: 50vw solid transparent;
+        border-bottom: 40px solid #F2F5F8; 
+        height: 0;
+        width: 0;
+        @include media(md){
+          border-left: 295px solid transparent;
+          border-bottom: 70px solid #F2F5F8; 
+        }
+        @include media(lg) {
+          border-left: 50vw solid transparent;            
+          border-bottom: 150px solid #F2F5F8; 
+        }
+      }
+    }/* triangle_separator_gr */
+    
+    /* triangle_separator_wh */
+    .triangle_separator_wh{
+      // width: 100px;
+      display: flex;
+      margin-top: 10px;
+      @include media(sm){
+        width: 100%;
+      }
+      .triangle_separator_wh_L{
+        border-right: 50vw solid transparent;
+        border-bottom: 40px solid #fff; 
+        height: 0;
+        width: 0;
+        @include media(md){
+          border-right: 295px solid transparent;
+          border-bottom: 70px solid #fff; 
+        }
+        @include media(lg) {
+          border-right: 50vw solid transparent;
+          border-bottom: 150px solid #fff 
+        }
+      }
+      .triangle_separator_wh_R{
+        border-left: 50vw solid transparent;
+        border-bottom: 40px solid #fff; 
+        height: 0;
+        width: 0;
+        @include media(md){
+          border-left: 295px solid transparent;
+          border-bottom: 70px solid #fff; 
+        }
+        @include media(lg) {
+          border-left: 50vw solid transparent;            
+          border-bottom: 150px solid #fff; 
+        }
+      }
+    }/* triangle_separator_wh */
+
+

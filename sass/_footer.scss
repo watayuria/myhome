@@ -1,0 +1,39 @@
+@use "config" as *;
+@use "media" as *;
+@use "functions" as *;
+
+footer{
+  width: 100%;
+  background-color: #4E4E4E;
+  
+  .f_container{
+    width: 100%;
+    padding: 15px 0;
+
+    .footer_menu{
+      width: 100%;
+      text-align: center;
+
+      a{
+        font-size: 14px;
+        line-height: 24px;
+        color: #fff;
+        margin: 0 10px;
+      }
+
+      span{
+        color: #fff;
+        font-size: 14px;
+      }
+    }
+
+    .copy_right{
+      font-size: 14px;
+      line-height: 24px;
+      color: #fff;
+      text-align: center;
+    }
+
+    
+  }
+}
